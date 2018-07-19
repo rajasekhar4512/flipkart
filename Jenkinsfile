@@ -1,16 +1,18 @@
-pipeline{
-agent any
-   stages{
-       stage('checkout'){
-          steps{
-          checkout scm
+pipeline {
+    agent any
+    stages {
+        stage('checkout') {
+            steps {
+                checkout scm
+            }
+        }
+        stage('build') {
+            steps {
+                sh 'mvn install'
+            }
+            steps {
+                echo 'Deploying'
+            }
+        }
+    }
 }
-         }
-stage('build'){
-steps{
-sh 'mvn install'
-           }
-       } 
-}
-}
-
