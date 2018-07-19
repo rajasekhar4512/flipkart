@@ -5,7 +5,7 @@ agent any
           steps{
           checkout scm
 
-}
+         }
 stage('build'){
 steps{
 sh 'mvn install'
@@ -13,4 +13,4 @@ sh 'mvn install'
        } 
 }
 }
-
+}
